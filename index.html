@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebcamViewer</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <main class="WebcamViewer">
+      <aside id="WebcamViewer__controlBar">
+        <div class="WebcamViewer__audioSource">
+          <label for="WebcamViewer__audioSourceSelect">
+            <span>Audio source:</span>
+          </label>
+          <select id="WebcamViewer__audioSourceSelect"></select>
+        </div>
+
+        <div class="WebcamViewer__videoSource">
+          <label for="WebcamViewer__videoSourceSelect">
+            <span>Video source:</span>
+          </label>
+          <select id="WebcamViewer__videoSourceSelect"></select>
+        </div>
+
+        <div class="WebcamViewer__fillContent">
+          <label for="WebcamViewer__fillContentCheckbox">
+            <span>Fill content:</span>
+          </label>
+          <input type="checkbox" id="WebcamViewer__fillContentCheckbox" />
+        </div>
+      </aside>
+
+      <article id="WebcamViewer__videoWrapper">
+        <video id="WebcamViewer__videoStreaming" autoplay muted playsinline></video>
+      </article>
+    </main>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

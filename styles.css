@@ -1,0 +1,64 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.WebcamViewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+}
+
+.WebcamViewer #WebcamViewer__videoWrapper {
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.WebcamViewer #WebcamViewer__videoWrapper #WebcamViewer__videoStreaming {
+  flex-grow: 1;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.WebcamViewer #WebcamViewer__videoWrapper #WebcamViewer__videoStreaming.WebcamViewer__videoStreaming--fillContent {
+  object-fit: fill;
+}
+
+.WebcamViewer #WebcamViewer__controlBar {
+  z-index: 1;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: rgba(0,0,0,.3);
+  color: #777777;
+  user-select: none;
+  border-radius: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out;
+}
+
+.WebcamViewer #WebcamViewer__controlBar.WebcamViewer__controlBar--isVisible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.WebcamViewer__audioSource label,
+#WebcamViewer__audioSourceSelect,
+.WebcamViewer__videoSource label,
+#WebcamViewer__videoSourceSelect,
+.WebcamViewer__fillContent label,
+#WebcamViewer__fillContentCheckbox {
+  cursor: pointer;
+}
